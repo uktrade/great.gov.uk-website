@@ -1,5 +1,5 @@
 {
-  "name": "static-ukti",
+  "name": "great.gov.uk",
   "version": "0.0.1",
   "engines": {
     "node": "5.6.0"
@@ -18,7 +18,7 @@
     "debug": "^2.2.0",
     "iigb-beta-content": "uktrade/iigb-beta-content",
     "great.gov.uk-layout": "uktrade/great.gov.uk-layout",
-    "great.gov.uk-structure": "great.gov.uk-structure",
+    "great.gov.uk-structure": "uktrade/great.gov.uk-structure",
     "js-yaml": "^3.6.1",
     "metalsmith": "^2.2.0",
     "metalsmith-assets": "^0.1.0",
