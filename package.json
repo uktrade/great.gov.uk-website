@@ -18,7 +18,6 @@
   "devDependencies": {
     "debug": "^2.2.0",
     "iigb-beta-content": "uktrade/iigb-beta-content",
-    "great.gov.uk-layout": "uktrade/great.gov.uk-layout",
     "great.gov.uk-structure": "uktrade/great.gov.uk-structure",
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers",
     "js-yaml": "^3.6.1",
