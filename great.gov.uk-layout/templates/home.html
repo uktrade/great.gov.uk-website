@@ -1,0 +1,27 @@
+{% extends "base/index.html" %}
+{% import "partials/markups.html" as markups %}
+
+{% block content %}
+
+{% include "partials/header-nav.html" %}
+
+{% include "partials/jumbotron.html" %}
+
+{{contentBlocks.firstSection.content.contents|safe}}
+
+{{ markups.bullet_list( header = contentBlocks.listHeader, list = contentBlocks.listItems, country = locale.country  ) }}
+
+<section class="dit-content-section container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ markups.tilesWithSideDescription( header = labels.great_british_industries, list = contentBlocks.tileItems, country = locale.country  ) }}
+        <div class="dit-section-cta">
+          <a href="industries" class="btn">{{labels.discover}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+

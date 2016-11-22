@@ -1,0 +1,20 @@
+{% extends "base/index.html" %}
+    {% block content %}
+    {% include "partials/hero-with-locale.html" %}
+    <div class="section section--stone-40">
+        <div class="container great-tiles-wrapper">
+            <div class="row great-equal-hights-container">
+              {% for l in contentBlocks.list %}
+                <div class="col-sm-3 great-tile great-tile--quarter {% if loop.last %} great-tile-omega {% endif %}  util-padd-bottom--btn">
+                    <h2>{{l.content.title}}</h2>
+                    {{l.content.contents | safe}}
+                    {% if l.link_label %}
+                    <a href="{{l.link_target}}" target="_blank" class="great-btn">{{labels[l.link_label]}}</a>
+                    {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include "partials/great-cta-section.html" %}
+    {% endblock %}

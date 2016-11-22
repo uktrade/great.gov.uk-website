@@ -1,0 +1,35 @@
+{% extends "base/index.html" %}
+    {% block content %}
+    {% include "partials/hero-with-locale.html" %}
+    <div class="section section--stone-40">
+        <div class="container great-tiles-wrapper">
+            <div class="row">
+                <div class="col-sm-12 great-tile">
+                    <h2>Help to sell abroad</h2>
+                    <p>This is your global opportunity</p>
+                    <ul class="list-unstyled great-equal-hights-container">
+                        {% for l in contentBlocks.contentList %}
+                        <li class="great-tile great-tile--sub-tile util-padd-bottom--btn {% if loop.last %} great-tile-omega {% endif %}">
+                            <h3>{{l.content.title}}</h3>
+                            {{l.content.contents | safe}}
+                            <a href="{{l.link_target}}" target="_blank" class="great-btn">{{labels[l.link_label]}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+             <div class="row great-equal-hights-container">
+                {% for l in contentBlocks.subContentList %}
+                <div class="great-tile great-tile--half util-padd- util-padd-bottom--btn {% if loop.last %} great-tile-omega {% endif %}">
+                    <h2>{{l.content.title}}</h2>
+                    {{l.content.contents | safe}}
+                    <a href="{{l.link_target}}" target="_blank" class="great-btn">{{labels[l.link_label]}}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% include "partials/great-cta-section.html" %}
+    {% endblock %}
+    

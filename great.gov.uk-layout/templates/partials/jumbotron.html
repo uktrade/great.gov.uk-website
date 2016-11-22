@@ -1,0 +1,77 @@
+{% if contentBlocks.pageHeader.heroImage %}
+    <style>
+        .jumbotron {
+            background-image: url("/assets/img/{{contentBlocks.pageHeader.heroImage}}");
+            background-size: cover;
+        }
+    </style>
+{% endif %}
+<div class="dit-hmg_logo">
+    <div class="container">
+        <img class="dit-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+        <div class="dit-nav-contact">{{labels.contact}}</div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="dit-hero__content">
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>{{ pageTitle }}</h1>
+                    <p>{{ contentBlocks.pageHeader.content.contents | safe }}</p>
+                </div>
+            </div>
+
+            {#    change to contentBlocks.pageHeader.heroVideo#}
+            {% if not contentBlocks.pageHeader.heroImage %}
+                <!--[if ! IE]><!-->
+                <p>
+                    <a href="#" class="bg-video-inactive bg-video-play dit-text-decoration-none" data-toggle="modal"
+                       data-target="#heroVideo">
+                        <div class="dit-play-video">
+                            <div class="dit-play-container">
+                                <span class="dit-video-anchor">{{labels.watch_video}}</span>
+                            </div>
+                            <span class="glyphicon glyphicon-play dit-play-icon" aria-hidden="true"></span>
+                        </div>
+                    </a>
+                </p>
+                <!--<![endif]-->
+                <!--[if gte IE 9]>
+
+        <p class="text-center"><a href="#" class="bg-video-inactive bg-video-play" data-toggle="modal"
+                                  data-target="#heroVideo">Watch video <span class="glyphicon glyphicon-play-circle dit-play"
+                                                                             aria-hidden="true"></span></a></p>
+        <![endif]-->
+                <!--[if lte IE 8]>
+        <iframe width="560" height="315" title="YouTube video player" id="yt0" role="presentation"
+                src="https://www.youtube.com/embed/yoHrRcKIBKw?controls=0&showinfo=0&origin=https%3A%2F%2Fwww.gov.uk&rel=0&enablejsapi=1&widgetid=1"
+                frameBorder="0" allowfullscreen="1"></iframe>
+        <![endif]-->
+            {% endif %}
+        </div>
+
+        {#    <nav>#}
+        {#        <ul class="text-center list-inline dit-home-section-anchors">#}
+        {#            <li><a href="#why-uk">{{labels.reasons}}</a></li>#}
+        {#            <li><a href="#industries">{{labels.great_british_industries}}</a></li>#}
+        {#            <li><a href="#guide">{{labels.simple_investment}}</a></li>#}
+        {#            <li><a href="/us/search">{{labels.search}}</a></li>#}
+        {#        </ul>#}
+        {#    </nav>#}
+    </div>
+    {% if not contentBlocks.pageHeader.heroImage %}
+        <div class="modal fade" id="heroVideo" role="dialog">
+            <div class="modal-dialog video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yoHrRcKIBKw" frameborder="0"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <video autoplay loop poster="/assets/img/northern-powerhouse.jpg" class="dit-hero__video-bg">
+            <source src="/assets/vid/northern-powerhouse.mp4" type="video/mp4">
+        </video>
+    {% endif %}
+</div>

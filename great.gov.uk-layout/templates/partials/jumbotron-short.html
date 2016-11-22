@@ -1,0 +1,28 @@
+{% if contentBlocks.pageHeader.heroImage %}
+    <style>
+        .jumbotron {
+            background-image: url("/assets/img/{{contentBlocks.pageHeader.heroImage}}");
+            background-size: cover;
+        }
+    </style>
+{% endif %}
+<div class="dit-hmg_logo">
+    <div class="container">
+        <img class="dit-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+        <div class="dit-nav-contact">{{ labels.contact }}</div>
+    </div>
+</div>
+
+<div class="jumbotron--short">
+    <div class="container">
+        <div class="dit-hero__content">
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>{{ pageTitle }}</h1>
+                    <p>{{ contentBlocks.pageHeader.content.contents | safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

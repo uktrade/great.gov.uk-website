@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-modules=( 'iigb-beta-content' 'great.gov.uk-structure' 'great.gov.uk-layout')
+modules=( 'iigb-beta-content' 'great.gov.uk-structure')
 project_url=`git remote get-url origin` #get current projects url
 
 function init {

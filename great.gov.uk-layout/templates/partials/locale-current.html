@@ -1,0 +1,11 @@
+                <div class="col-sm-12 text-center"><hr></div>
+                <div class="col-sm-12 text-center">
+                    {% if locale.country %}
+                    {% if locale.country === 'int'%}
+                    <h2 class="util-font-size--body">International (English) selected</h2>
+                    {% else %}
+                    <h2 class="util-font-size--body">{{labels.I_am_based_in}} <span class="great-current-locale"><span class="great-flag-circle great-flag-circle--{{locale.country}}"></span>{% if locale.country === 'uk'%}United Kingdom{% elseif locale.country === 'us' %}United States{% elseif locale.country === 'cn' %}中国{% elseif locale.country === 'in' %}India{% elseif locale.country === 'de' %}Deutschland{% endif %}</span></h2>
+                    {% endif %}
+                    <a href="#" class="great-locale-selector__toggle">{{labels.change_country}}</a>
+                    {% endif %}
+                </div>

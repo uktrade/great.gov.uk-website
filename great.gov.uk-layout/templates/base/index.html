@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<base href="https://www.great.gov.uk/{{ locale.country }}/">-->
+
+    <title>Welcome to Great!</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css"/>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5B7BJ7');</script>
+    <!-- End Google Tag Manager -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .dit-loading {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B7BJ7"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="dit-loading"></div>
+<noscript>
+    <style type="text/css">
+        .dit-loading {
+            display: none;
+        }
+
+        .dit-outer-wrap {
+            display: block;
+        }
+    </style>
+</noscript>
+<div class="dit-hmg-container">
+    <div class="container">
+        <img class="dit-hmg-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+        <div class="dit-beta-block"><a href="beta"><span class="dit-beta-block__icon">BETA</span> This is a new service.</a>
+        </div>
+    </div>
+</div>
+
+<div class="great-brand">
+    <img src="/assets/img/great-logo.png" alt="">
+</div>
+
+{% block content %}
+{% endblock %}
+
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% include "partials/scripts.html" %}
+{% endblock %}
+
+
+</body>
+
+</html>
