@@ -1,8 +1,24 @@
-doEqualHeights('.great-equal-hights-container');
-setupLocaleSelector();
-blurLinks();
-resizeListner();
-removeloading();
+init();
+
+
+
+function init() {
+    var is_root = location.pathname == "/int/";
+    console.log(location.pathname);
+
+    doEqualHeights('.great-equal-hights-container');
+    setupLocaleSelector();
+    blurLinks();
+    resizeListner();
+
+    if(is_root) {
+        checkGeoLocation();
+    } else {
+        removeloading();
+    }
+    // removeloading();
+    // doGeoRouting();
+}
 
 
 function doEqualHeights(input) {
@@ -56,4 +72,28 @@ function resizeListner() {
     $(window).resize(function() {
         doEqualHeights('.great-equal-hights-container');
     });
+}
+
+
+function checkGeoLocation() {
+    var jqxhr = $.getJSON( "http://freegeoip.net/json/", function(data) {
+      // console.log( "success" );
+    })
+      .done(function( data) {
+        doGeoRouting(data.country_code);
+        // console.log( "second success" );
+      })
+      .fail(function() {
+        // console.log( "error" );
+        removeloading();
+      })
+}
+
+function doGeoRouting(countryCode) {
+    var supportedCountries = [ 'US', 'CN', 'DE' ];
+
+   if($.inArray( countryCode, supportedCountries)!='-1') {
+    var redirectLocation = countryCode.toLowerCase();
+    window.location.replace(redirectLocation);
+   }
 }
