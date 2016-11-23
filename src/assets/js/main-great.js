@@ -3,7 +3,7 @@ init();
 
 
 function init() {
-    var is_root = location.pathname == "/int/";
+    var is_root = location.pathname == "/";
     console.log(location.pathname);
 
     doEqualHeights('.great-equal-hights-container');
