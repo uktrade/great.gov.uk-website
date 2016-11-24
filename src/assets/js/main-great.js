@@ -4,7 +4,7 @@ init();
 
 function init() {
     var is_root = location.pathname == "/";
-    console.log(location.pathname);
+    // console.log(location.pathname);
 
     doEqualHeights('.great-equal-hights-container');
     setupLocaleSelector();
@@ -76,12 +76,12 @@ function resizeListner() {
 
 
 function checkGeoLocation() {
-    var jqxhr = $.getJSON( "http://freegeoip.net/json/", function(data) {
+    var jqxhr = $.getJSON( "//freegeoip.net/json/", function(data) {
       // console.log( "success" );
     })
       .done(function( data) {
         doGeoRouting(data.country_code);
-        // console.log( "second success" );
+        // console.log( data );
       })
       .fail(function() {
         // console.log( "error" );
