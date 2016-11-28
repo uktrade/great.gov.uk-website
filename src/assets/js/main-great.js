@@ -81,8 +81,6 @@ function checkGeoLocation() {
         })
         .done(function(data) {
             doGeoRouting(data.country_code);
-            console.log("here");
-            console.log(data);
         })
         .fail(function() {
             // console.log( "error" );
