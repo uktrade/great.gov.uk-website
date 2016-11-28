@@ -11,7 +11,7 @@ function init() {
     blurLinks();
     resizeListner();
 
-    if(is_root) {
+    if (is_root) {
         checkGeoLocation();
     } else {
         removeloading();
@@ -47,7 +47,7 @@ function removeloading() {
 
 function slideToggle(item) {
     // $(item).slideToggle("easeInOutSine");
-    $(item).slideToggle('2000', 'easeInOutSine', function () {
+    $(item).slideToggle('2000', 'easeInOutSine', function() {
         // Animation complete.
     });
 };
@@ -56,16 +56,16 @@ function scrollingBG() {
     // Y axis scroll speed
     var velocity = 0.15;
 
-    function update(){ 
-    var pos = $(window).scrollTop(); 
-    var $element = $(this);
-    // subtract some from the height b/c of the padding
-    var height = $element.height()+50;
-        $('body').css('backgroundPosition', '0 ' + Math.round(-(height - pos) * velocity) + 'px'); 
+    function update() {
+        var pos = $(window).scrollTop();
+        var $element = $(this);
+        // subtract some from the height b/c of the padding
+        var height = $element.height() + 50;
+        $('body').css('backgroundPosition', '0 ' + Math.round(-(height - pos) * velocity) + 'px');
     };
 
     $(window).bind('scroll', update);
-    
+
 };
 
 function resizeListner() {
@@ -76,24 +76,27 @@ function resizeListner() {
 
 
 function checkGeoLocation() {
-    var jqxhr = $.getJSON( "//freegeoip.net/json/", function(data) {
-      // console.log( "success" );
-    })
-      .done(function( data) {
-        doGeoRouting(data.country_code);
-        // console.log( data );
-      })
-      .fail(function() {
-        // console.log( "error" );
-        removeloading();
-      })
+    var jqxhr = $.getJSON("//freegeoip.net/json/", function(data) {
+            // console.log( "success" );
+        })
+        .done(function(data) {
+            doGeoRouting(data.country_code);
+            console.log("here");
+            console.log(data);
+        })
+        .fail(function() {
+            // console.log( "error" );
+            removeloading();
+        })
 }
 
 function doGeoRouting(countryCode) {
-    var supportedCountries = [ 'US', 'CN', 'DE' ];
+    var supportedCountries = ['US', 'CN', 'DE'];
 
-   if($.inArray( countryCode, supportedCountries)!='-1') {
-    var redirectLocation = countryCode.toLowerCase();
-    window.location.replace(redirectLocation);
-   }
+    if ($.inArray(countryCode, supportedCountries) != '-1') {
+        var redirectLocation = countryCode.toLowerCase();
+        window.location.replace(redirectLocation);
+    } else {
+        removeloading();
+    }
 }
