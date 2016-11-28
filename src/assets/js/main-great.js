@@ -89,7 +89,7 @@ function checkGeoLocation() {
 }
 
 function doGeoRouting(countryCode) {
-    var supportedCountries = ['US', 'CN', 'DE'];
+    var supportedCountries = ['US', 'CN', 'DE', 'IN'];
     var supportedGBCountries = ['GB', 'IE'];
 
     if ($.inArray(countryCode, supportedCountries) != '-1') {
@@ -97,7 +97,7 @@ function doGeoRouting(countryCode) {
     } else if ($.inArray(countryCode, supportedGBCountries) != '-1') {
         doRedirect('UK');
     } else {
-        removeloading();
+        doRedirect('INT');
     }
 }
 
