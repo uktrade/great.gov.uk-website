@@ -90,11 +90,18 @@ function checkGeoLocation() {
 
 function doGeoRouting(countryCode) {
     var supportedCountries = ['US', 'CN', 'DE'];
+    var supportedGBCountries = ['GB', 'IE'];
 
     if ($.inArray(countryCode, supportedCountries) != '-1') {
-        var redirectLocation = countryCode.toLowerCase();
-        window.location.replace(redirectLocation);
+        doRedirect(countryCode);
+    } else if ($.inArray(countryCode, supportedGBCountries) != '-1') {
+        doRedirect('UK');
     } else {
         removeloading();
     }
+}
+
+function doRedirect(countryCode) {
+    var redirectLocation = countryCode.toLowerCase();
+    window.location.pathname = '/' + redirectLocation;
 }
