@@ -1,7 +1,7 @@
-{% if contentBlocks.pageHeader.heroImage %}
+{% if pageHeader.heroImage %}
     <style>
         .jumbotron {
-            background-image: url("/assets/img/{{contentBlocks.pageHeader.heroImage}}");
+            background-image: url("/assets/img/{{pageHeader.heroImage}}");
             background-size: cover;
         }
     </style>
@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h1>{{ pageTitle }}</h1>
-                    <p>{{ contentBlocks.pageHeader.content.contents | safe }}</p>
+                    <p>{{ pageHeader.content.contents | safe }}</p>
                 </div>
             </div>
         </div>
