@@ -29,6 +29,6 @@
     "great.gov.uk-structure": "uktrade/great.gov.uk-structure",
     "nodemon": "^1.11.0",
     "underscore": "^1.8.3",
-    "website-builder": "uktrade/website-builder#latest"
+    "website-builder": "uktrade/website-builder"
   }
 }
