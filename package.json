@@ -10,7 +10,8 @@
   },
   "config": {
     "debug": "website-builder,metalsmith-page-builder",
-    "content_base": "node_modules"
+    "content_base": "node_modules",
+    "cms_branch": "master"
   },
   "scripts": {
     "start": "npm run build && node lib/server.js",
@@ -21,12 +22,14 @@
     "build-pages": "DEBUG=$npm_package_config_debug website-builder build --layouts src/templates --content $npm_package_config_content_base/iigb-beta-content/content --structure $npm_package_config_content_base/great.gov.uk-structure/structure",
     "assets": "DEBUG=$npm_package_config_debug website-builder -t build/assets assets --assets src/assets --sass ./scss -o ./css",
     "media": "website-builder -t build/media assets --assets $npm_package_config_content_base/iigb-beta-content/media",
-    "deploy": "npm run build && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh"
+    "predeploy": "npm install && npm run postinstall && npm run build",
+    "deploy": "npm run predeploy && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh",
+    "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\""
+
   },
   "devDependencies": {
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers#latest",
     "iigb-beta-content": "uktrade/iigb-beta-content",
-    "great.gov.uk-structure": "uktrade/great.gov.uk-structure",
     "nodemon": "^1.11.0",
     "underscore": "^1.8.3",
     "website-builder": "uktrade/website-builder"
