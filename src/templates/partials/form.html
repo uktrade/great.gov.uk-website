@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <section class="container dit-form-section">
         <div class="col-md-4" style="min-height:58rem; border-right: 1px solid #D8D8D8;">
-            <h3 class="dark-grey">{{ contentBlocks.formBlock.content.title }}</h3>
+            <h3 class="dark-grey">{{ formBlock.content.title }}</h3>
             <p>
-                {{ contentBlocks.formBlock.content.contents | safe }}
+                {{ formBlock.content.contents | safe }}
             </p>
-            {% for l in contentBlocks.formBlock.content.list %}
+            {% for l in formBlock.content.list %}
                 <div class="row bottom-buffer">
                     <div class="col-md-2">
                         <span class="glyphicon glyphicon-star" aria-hidden="true" style="color:red;"></span>

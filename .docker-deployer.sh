@@ -3,12 +3,13 @@
 [ -z "$DOCKER_IMAGE_NAME" ] && echo "DOCKER_IMAGE_NAME is not set, using name 'iigb-deployer' as image name" && \
      DOCKER_IMAGE_NAME=iigb
 
+[ -z "$CMS_BRANCH" ] && echo "CMS_BRANCH not set, using master" && CMS_BRANCH="master"
 
 DOCKER_IMAGE="$DOCKER_IMAGE_NAME-deployer"
 
 $DOCKER_PATH images && \
 $DOCKER_PATH build --force-rm -t $DOCKER_IMAGE $PWD  && \
-$DOCKER_PATH run --rm -i --name $DOCKER_IMAGE  -e BUCKET=$BUCKET -e DID=$DID -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e NO_ROBOTS=$NO_ROBOTS  $DOCKER_IMAGE /bin/bash -c "npm run deploy"
+$DOCKER_PATH run --rm -i --name $DOCKER_IMAGE  -e BUCKET=$BUCKET -e DID=$DID -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e NO_ROBOTS=$NO_ROBOTS  $DOCKER_IMAGE /bin/bash -c "npm config set great.gov.uk:cms_branch $CMS_BRANCH && npm run deploy"
 
 
 result=$?

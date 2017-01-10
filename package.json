@@ -1,35 +1,37 @@
 {
   "name": "great.gov.uk",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "node": "5.6.0"
   },
   "private": true,
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.14.0"
+  },
+  "config": {
+    "debug": "website-builder,metalsmith-page-builder",
+    "content_base": "node_modules",
+    "cms_branch": "master"
   },
   "scripts": {
     "start": "npm run build && node lib/server.js",
-    "dev": "./lib/init-dev.sh && nodemon -e json,js,sh,html,yaml,md,css,scss lib/server.js  --ignore build",
-    "postinstall": "npm run build",
-    "build": "DEBUG=build,WARN,ERROR,$DEBUG node lib/build.js",
-    "deploy": "npm run build && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh"
+    "dev": "./lib/init-dev.sh && nodemon --watch src -e json,js,sh,html,yaml,md,css,scss lib/server.js",
+    "clean": "website-builder clean",
+    "build": "npm run clean && npm run build-pages && npm run assets && npm run media",
+    "build-dev": "npm config set great.gov.uk:content_base . && npm run build",
+    "build-pages": "DEBUG=$npm_package_config_debug website-builder build --layouts src/templates --content $npm_package_config_content_base/iigb-beta-content/content --structure $npm_package_config_content_base/great.gov.uk-structure/structure",
+    "assets": "DEBUG=$npm_package_config_debug website-builder -t build/assets assets --assets src/assets --sass ./scss -o ./css",
+    "media": "website-builder -t build/media assets --assets $npm_package_config_content_base/iigb-beta-content/media",
+    "predeploy": "npm install && npm run postinstall && npm run build",
+    "deploy": "npm run predeploy && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh",
+    "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\"",
+    "release": "node_modules/iigb-aws-helpers/release.sh"
   },
   "devDependencies": {
-    "debug": "^2.2.0",
-    "iigb-beta-content": "uktrade/iigb-beta-content",
-    "great.gov.uk-structure": "uktrade/great.gov.uk-structure",
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers",
-    "js-yaml": "^3.6.1",
-    "metalsmith": "^2.2.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-json": "^0.1.2",
-    "metalsmith-layouts": "^1.6.5",
-    "metalsmith-markdown": "^0.2.1",
-    "metalsmith-sass": "^1.3.0",
+    "iigb-beta-content": "uktrade/iigb-beta-content",
     "nodemon": "^1.11.0",
-    "nunjucks": "^2.5.2",
-    "nunjucks-date": "^1.2.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "website-builder": "uktrade/website-builder"
   }
 }
