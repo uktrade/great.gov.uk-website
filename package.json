@@ -1,6 +1,6 @@
 {
   "name": "great.gov.uk",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "node": "5.6.0"
   },
@@ -26,8 +26,6 @@
     "deploy": "npm run predeploy && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh",
     "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\"",
     "release": "node_modules/iigb-aws-helpers/release.sh"
-
-
   },
   "devDependencies": {
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers",
