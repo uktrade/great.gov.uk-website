@@ -24,7 +24,9 @@
     "media": "website-builder -t build/media assets --assets $npm_package_config_content_base/iigb-beta-content/media",
     "predeploy": "npm install && npm run postinstall && npm run build",
     "deploy": "npm run predeploy && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh",
-    "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\""
+    "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\"",
+    "release": "node_modules/iigb-aws-helpers/release.sh"
+
 
   },
   "devDependencies": {
