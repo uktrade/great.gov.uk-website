@@ -1,6 +1,6 @@
 {
   "name": "great.gov.uk",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "engines": {
     "node": "5.6.0"
   },
@@ -27,7 +27,6 @@
     "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\"",
     "release": "node_modules/iigb-aws-helpers/release.sh",
     "rollback": "node_modules/iigb-aws-helpers/rollback.sh"
-
   },
   "devDependencies": {
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers",
