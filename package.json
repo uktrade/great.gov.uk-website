@@ -1,6 +1,6 @@
 {
   "name": "great.gov.uk",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "engines": {
     "node": "5.6.0"
   },
