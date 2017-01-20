@@ -1,14 +1,14 @@
 {% if pageHeader.heroImage %}
     <style>
         .jumbotron {
-            background-image: url("/assets/img/{{pageHeader.heroImage}}");
+          background-image: url("/{{assets}}/img/{{pageHeader.heroImage}}");
             background-size: cover;
         }
     </style>
 {% endif %}
 <div class="dit-hmg_logo">
     <div class="container">
-        <img class="dit-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+      <img class="dit-logo" src="/{{assets}}/img/hmg-logo.png" alt="HMG Logo">
         <div class="dit-nav-contact">{{ labels.contact }}</div>
     </div>
 </div>

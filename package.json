@@ -5,33 +5,40 @@
     "node": "5.6.0"
   },
   "private": true,
-  "dependencies": {
-    "express": "^4.14.0"
-  },
   "config": {
     "debug": "website-builder,metalsmith-page-builder",
     "content_base": "node_modules",
-    "cms_branch": "master"
+    "cms_branch": "master",
+    "develop": false
   },
   "scripts": {
     "start": "npm run build && node lib/server.js",
-    "dev": "./lib/init-dev.sh && nodemon --watch src -e json,js,sh,html,yaml,md,css,scss lib/server.js",
+    "dev": "./bin/init-dev.sh && nodemon --watch src/templates -e html lib/server.js",
     "clean": "website-builder clean",
-    "build": "npm run clean && npm run build-pages && npm run assets && npm run media",
-    "build-dev": "npm config set great.gov.uk:content_base . && npm run build",
+    "build": "npm run clean && npm run build-pages && npm run assets && npm run js && npm run media",
+    "build-dev": "npm config set great.gov.uk:content_base . && npm config set great.gov.uk:develop true && npm run build",
     "build-pages": "DEBUG=$npm_package_config_debug website-builder build --layouts src/templates --content $npm_package_config_content_base/iigb-beta-content/content --structure $npm_package_config_content_base/great.gov.uk-structure/structure",
-    "assets": "DEBUG=$npm_package_config_debug website-builder -t build/assets assets --assets src/assets --sass ./scss -o ./css",
-    "media": "website-builder -t build/media assets --assets $npm_package_config_content_base/iigb-beta-content/media",
+    "assets": "./bin/build-assets",
+    "js": "./bin/build-js",
+    "media": "website-builder -t build/assets/${IIGB_BUILD}/media assets --assets $npm_package_config_content_base/iigb-beta-content/media",
     "predeploy": "npm install && npm run postinstall && npm run build",
     "deploy": "npm run predeploy && node_modules/iigb-aws-helpers/deploy.sh && node_modules/iigb-aws-helpers/invalidate-cache.sh",
     "postinstall": "npm install uktrade/great.gov.uk-structure#\"$npm_package_config_cms_branch\"",
     "release": "node_modules/iigb-aws-helpers/release.sh",
     "rollback": "node_modules/iigb-aws-helpers/rollback.sh"
   },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "jquery.easing": "^1.4.1"
+  },
   "devDependencies": {
+    "browserify": "^13.3.0",
+    "express": "^4.14.0",
     "iigb-aws-helpers": "uktrade/iigb-aws-helpers",
     "iigb-beta-content": "uktrade/iigb-beta-content",
     "nodemon": "^1.11.0",
+    "uglify-js": "^2.7.5",
     "underscore": "^1.8.3",
     "website-builder": "uktrade/website-builder"
   }
