@@ -5,7 +5,8 @@
 
 [ -z "$CMS_BRANCH" ] && echo "CMS_BRANCH not set, using master" && CMS_BRANCH="master"
 
-IIGB_BUILD=`data +%s`
+IIGB_BUILD=`date +%s`
+
 DOCKER_IMAGE="$DOCKER_IMAGE_NAME-deployer"
 
 echo "Attempting to delete previous run image if available"
