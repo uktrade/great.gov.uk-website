@@ -63,4 +63,6 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
+# Intellij files
 
+.idea
