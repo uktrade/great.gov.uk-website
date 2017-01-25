@@ -157,62 +157,36 @@ h2 {
   ul {
     list-style: none;
     padding: 15px 0 0 0;
-    margin: 0;
     overflow: hidden;
   }
 
   li {
-    padding: 15px 15px 15px 0;
-    margin: 0 3.5% 3.5% 0;
-    width: 31%;
-    display: block;
-    float: left;
-    // height: 150px;
-    // border: 1px solid red;
-
-    &:nth-child(3n+0) {
-      margin-right: 0;
-    }
-
-    @media (max-width: $screen-sm-max) {
-      width: 48.25%;
-      margin-right: 3.5%;
-
-      &:nth-child(3n+0) {
-        margin-right: 3.5%;
-      }
-
-      &:nth-child(2n+0) {
-        margin-right: 0;
-      }
-    }
-
-    @media (max-width: $screen-xs-max) {
-      width: 100%;
-      margin-right: 0;
-
-      a {
-        min-height: auto;
-      }
-    }
+    margin-top: 16px;
+    margin-bottom: 60px;
 
     a {
-      // padding: 15px;
-      // display: block;
       text-decoration: none;
-      // height: 100%;
       font-weight: bold;
       color: $dark-grey;
       display: inline-block;
       position: relative;
       margin-left: 50px;
 
-      &:hover {
-        // background-color: $stone;
+      &:hover, &:focus, &:active {
         text-decoration: none;
         color: $link-blue-hover;
         border-bottom: 1px solid;
+        padding-bottom: 0px;
+        margin-bottom: -1px;
       }
+    }
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 28px;
     }
   }
 }
