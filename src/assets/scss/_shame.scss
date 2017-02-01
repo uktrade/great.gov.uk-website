@@ -256,51 +256,51 @@ a.great-btn, .great-btn {
   left: -50px;
 
   &--br {
-    background-image: url(../media/flags/flag-br.svg);
+    background-image: url(../img/flag-br.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-br.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-br.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--cn {
-    background-image: url(../media/flags/flag-cn.svg);
+    background-image: url(../img/flag-cn.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-cn.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-cn.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--de {
-    background-image: url(../media/flags/flag-de.svg);
+    background-image: url(../img/flag-de.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-de.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-de.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--es {
-    background-image: url(../media/flags/flag-es.svg);
+    background-image: url(../img/flag-es.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-es.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-es.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--jp {
-    background-image: url(../media/flags/flag-jp.svg);
+    background-image: url(../img/flag-jp.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-jp.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-jp.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--in {
-    background-image: url(../media/flags/flag-in.svg);
+    background-image: url(../img/flag-in.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-in.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-in.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--us {
-    background-image: url(../media/flags/flag-us.svg);
+    background-image: url(../img/flag-us.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-us.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-us.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--uk {
-    background-image: url(../media/flags/flag-uk.svg);
+    background-image: url(../img/flag-uk.svg);
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-                    src=$assets + '/media/flags/flag-uk.png', sizingMethod='scale');    //fallback for IE8
+                    src=$assets + '/img/flag-uk.png', sizingMethod='scale');    //fallback for IE8
   }
 }
 
@@ -409,7 +409,6 @@ a.great-btn, .great-btn {
 
   a {
     color: $white;
-    // border-bottom: 1px solid;
     padding-bottom: 2px;
   }
 
@@ -424,6 +423,82 @@ a.great-btn, .great-btn {
     float: left;
   }
 
+  @media (max-width: $screen-xs-max) {
+    margin-bottom: 12px;
+  }
+}
+
+.dit-nav-language {
+  float: right;
+  display: table;
+  color: $white;
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  font-weight: 100;
+  border-spacing: 4px;
+
+  &-wrapper {
+    display: table-row;
+
+    & div {
+      display: table-cell;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    margin: 3px 0 0 0;
+  }
+}
+
+.dit-language {
+  text-transform: uppercase;
+
+  @media (max-width: $screen-xs-max) {
+    vertical-align: bottom;
+  }
+}
+
+.dit-selector-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  width: 80%;
+
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+
+.dit-icon {
+  height: 70px;
+  width: 70px;
+  margin: 28px auto;
+
+  &-sm {
+    height: 50px;
+    width: 50px;
+    margin: 4px -4px 0 15px;
+  }
+
+  &-xs {
+    height: 24px;
+    width: 24px;
+  }
+
+  &-language {
+    background: linear-gradient(transparent, transparent),
+    url(../img/language-icon.svg) no-repeat;
+    background-size: contain;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/dit-language-icon.png',
+                    sizingMethod='scale');
+
+    @media (max-width: $screen-xs-max) {
+      margin: -13px -15px 0 0;
+    }
+  }
 }
 
 
