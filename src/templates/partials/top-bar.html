@@ -1,23 +1,23 @@
 <div class="dit-hmg-container">
     <div class="container">
-        <a href="/" class="visible-xs-inline-block"
-           style="float: right;background: transparent;" data-toggle="modal" data-target="#languageSelectorXs" data-remote="false">
-            <div class="dit-nav-language">
-                <div class="dit-nav-language-wrapper">
-                    <div class="dit-icon-xs dit-icon-language"></div>
-                    <div class="dit-language">{{locale.language}}</div>
-                </div>
-            </div>
-        </a>
         <div class="row">
-            <div class="col-sm-6">
+            <a href="/" class="visible-xs-inline-block"
+               style="float: right;background: transparent;" data-toggle="modal" data-target="#languageSelectorXs" data-remote="false">
+                <div class="dit-nav-language">
+                    <div class="dit-nav-language-wrapper">
+                        <div class="dit-icon-xs dit-icon-language"></div>
+                        <div class="dit-language">{{locale.language}}</div>
+                    </div>
+                </div>
+            </a>
+            <div class="col-xs-8 col-sm-3 col-md-2">
                 <a href="https://www.gov.uk/" target="_blank">
                     <img class="dit-hmg-logo" src="/{{assets}}/img/hmg-logo.png" alt="HMG Logo">
                 </a>
-                <div class="dit-beta-block"><a href="beta"><span class="dit-beta-block__icon">BETA</span> This is a new service.</a>
-                </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-12 col-sm-5 col-md-4 dit-beta-block"><a href="beta"><span class="dit-beta-block__icon">BETA</span> This is a new service.</a>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-6">
                 <div class="hidden-xs " id="langsel-collapse-1">
                     <a href="/"
                        data-toggle="modal"
