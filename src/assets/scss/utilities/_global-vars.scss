@@ -26,4 +26,20 @@ $grid-float-breakpoint: $screen-sm-min !default;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
 
+// colours
+
+$text-colour: #424242;
+$red-line-colour: #B00D23;
+$red-text-colour: #E41F13;
+$background-colour: #FDFDFC;
+$background-colour-table-alt: #EFEAE2 ;
+$background-jumbotron-empty: #1E1348;
+$great-blue: #1E1348;
+$link-colour: #00549F;
+$link-colour-hover: #0C3F6D;
+$tile-border-colour: #D8D8D8;
+$white: #FFF;
+$light-gray: #777;
+$toc-colour: #EFEAE2;
+
 $assets: '/assets' !default;
