@@ -1,14 +1,14 @@
-{% if contentBlocks.pageHeader.heroImage %}
+{% if pageHeader.heroImage %}
     <style>
         .jumbotron {
-            background-image: url("/assets/img/{{contentBlocks.pageHeader.heroImage}}");
+          background-image: url("/{{assets}}/img/{{pageHeader.heroImage}}");
             background-size: cover;
         }
     </style>
 {% endif %}
 <div class="dit-hmg_logo">
     <div class="container">
-        <img class="dit-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+      <img class="dit-logo" src="/{{assets}}/img/hmg-logo.png" alt="HMG Logo">
         <div class="dit-nav-contact">{{labels.contact}}</div>
     </div>
 </div>
@@ -20,12 +20,12 @@
             <div class="row">
                 <div class="col-sm-8">
                     <h1>{{ pageTitle }}</h1>
-                    <p>{{ contentBlocks.pageHeader.content.contents | safe }}</p>
+                    <p>{{ pageHeader.content.contents | safe }}</p>
                 </div>
             </div>
 
-            {#    change to contentBlocks.pageHeader.heroVideo#}
-            {% if not contentBlocks.pageHeader.heroImage %}
+            {#    change to pageHeader.heroVideo#}
+            {% if not pageHeader.heroImage %}
                 <!--[if ! IE]><!-->
                 <p>
                     <a href="#" class="bg-video-inactive bg-video-play dit-text-decoration-none" data-toggle="modal"
@@ -62,7 +62,7 @@
         {#        </ul>#}
         {#    </nav>#}
     </div>
-    {% if not contentBlocks.pageHeader.heroImage %}
+    {% if not pageHeader.heroImage %}
         <div class="modal fade" id="heroVideo" role="dialog">
             <div class="modal-dialog video-wrapper">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/yoHrRcKIBKw" frameborder="0"
@@ -70,8 +70,8 @@
             </div>
         </div>
 
-        <video autoplay loop poster="/assets/img/northern-powerhouse.jpg" class="dit-hero__video-bg">
-            <source src="/assets/vid/northern-powerhouse.mp4" type="video/mp4">
+        <video autoplay loop poster="/{{assets}}/img/northern-powerhouse.jpg" class="dit-hero__video-bg">
+          <source src="/{{assets}}/vid/northern-powerhouse.mp4" type="video/mp4">
         </video>
     {% endif %}
 </div>

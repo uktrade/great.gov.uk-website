@@ -157,62 +157,36 @@ h2 {
   ul {
     list-style: none;
     padding: 15px 0 0 0;
-    margin: 0;
     overflow: hidden;
   }
 
   li {
-    padding: 15px 15px 15px 0;
-    margin: 0 3.5% 3.5% 0;
-    width: 31%;
-    display: block;
-    float: left;
-    // height: 150px;
-    // border: 1px solid red;
-
-    &:nth-child(3n+0) {
-      margin-right: 0;
-    }
-
-    @media (max-width: $screen-sm-max) {
-      width: 48.25%;
-      margin-right: 3.5%;
-
-      &:nth-child(3n+0) {
-        margin-right: 3.5%;
-      }
-
-      &:nth-child(2n+0) {
-        margin-right: 0;
-      }
-    }
-
-    @media (max-width: $screen-xs-max) {
-      width: 100%;
-      margin-right: 0;
-
-      a {
-        min-height: auto;
-      }
-    }
+    margin-top: 16px;
+    margin-bottom: 60px;
 
     a {
-      // padding: 15px;
-      // display: block;
       text-decoration: none;
-      // height: 100%;
       font-weight: bold;
       color: $dark-grey;
       display: inline-block;
       position: relative;
       margin-left: 50px;
 
-      &:hover {
-        // background-color: $stone;
+      &:hover, &:focus, &:active {
         text-decoration: none;
         color: $link-blue-hover;
         border-bottom: 1px solid;
+        padding-bottom: 0px;
+        margin-bottom: -1px;
       }
+    }
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 28px;
     }
   }
 }
@@ -274,11 +248,6 @@ a.great-btn, .great-btn {
 .great-flag-circle {
   width: 50px;
   height: 40px;
-  // border-radius: 50%;
-  // background-color: $link-blue;
-  // display: block;
-  // float: left;
-  // margin: -7px 10px 0 -50px;
   background-size: 40px auto;
   background-repeat: no-repeat;
   display: inline-block;
@@ -286,24 +255,52 @@ a.great-btn, .great-btn {
   top: -8px;
   left: -50px;
 
-  &--uk {
-    background-image: url(../img/flag-uk.png);
-  }
-
-  &--de {
-    background-image: url(../img/flag-de.png);
+  &--br {
+    background-image: url(../media/flags/flag-br.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-br.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--cn {
-    background-image: url(../img/flag-cn.png);
+    background-image: url(../media/flags/flag-cn.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-cn.png', sizingMethod='scale');    //fallback for IE8
   }
 
-  &--us {
-    background-image: url(../img/flag-us.png);
+  &--de {
+    background-image: url(../media/flags/flag-de.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-de.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--es {
+    background-image: url(../media/flags/flag-es.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-es.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--jp {
+    background-image: url(../media/flags/flag-jp.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-jp.png', sizingMethod='scale');    //fallback for IE8
   }
 
   &--in {
-    background-image: url(../img/flag-in.png);
+    background-image: url(../media/flags/flag-in.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-in.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--us {
+    background-image: url(../media/flags/flag-us.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-us.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--uk {
+    background-image: url(../media/flags/flag-uk.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/media/flags/flag-uk.png', sizingMethod='scale');    //fallback for IE8
   }
 }
 

@@ -4,13 +4,33 @@
                 <div class="col-sm-12 great-cta-block">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>{{contentBlocks.pageFooter.content.contents | safe }}</h2>
+                            <h2>{{pageFooter.content.contents | safe }}</h2>
                         </div>
                         <div class="col-sm-4 text-right">
-                            <a href="{{contentBlocks.pageFooter.link_target}}" class="great-btn great-btn--white">{{labels[contentBlocks.pageFooter.link_label]}}</a>
+                            <a href="{{pageFooter.link_target}}" class="great-btn great-btn--white">{{labels[pageFooter.link_label]}}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--
+    [cms-fields]
+      pageFooter:
+        type: content
+        label: Page footer
+        fields:
+          content:
+            type: text
+            label: Content
+            help: Choose content to appear in this section
+          link_label:
+            type: text
+            label: Label for link 
+            help: Choose label for link
+          link:
+            type: text
+            label: Link target for thumbnail
+    [/cms-fields]
+      -->
