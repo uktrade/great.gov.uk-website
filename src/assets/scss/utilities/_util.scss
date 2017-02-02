@@ -1,0 +1,23 @@
+.util {
+  &-padd {
+    &-top {
+      //
+    }
+
+    &-bottom {
+      &--btn {
+        padding-bottom: 90px !important;
+      }
+    }
+  }
+
+  &-mar {
+    &--0 {
+      margin: 0 !important;
+    }
+  }
+
+  &-font-size--body {
+    font-size: 16px;
+  }
+}

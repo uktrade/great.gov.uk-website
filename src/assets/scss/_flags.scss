@@ -1,0 +1,58 @@
+.great-flag-circle {
+  width: 50px;
+  height: 40px;
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: -50px;
+
+  &--br {
+    background-image: url(../img/flag-br.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-br.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--cn {
+    background-image: url(../img/flag-cn.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-cn.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--de {
+    background-image: url(../img/flag-de.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-de.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--es {
+    background-image: url(../img/flag-es.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-es.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--jp {
+    background-image: url(../img/flag-jp.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-jp.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--in {
+    background-image: url(../img/flag-in.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-in.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--us {
+    background-image: url(../img/flag-us.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-us.png', sizingMethod='scale');    //fallback for IE8
+  }
+
+  &--uk {
+    background-image: url(../img/flag-uk.svg);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/flag-uk.png', sizingMethod='scale');    //fallback for IE8
+  }
+}

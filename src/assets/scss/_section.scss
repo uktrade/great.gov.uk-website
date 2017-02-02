@@ -1,0 +1,85 @@
+.section {
+  width: 100%;
+  background-color: $white;
+
+  &--stone-40 {
+    background-color: $stone-40;
+  }
+
+  &--great-cta {
+    background-color: transparent;
+    padding: 150px 0;
+  }
+}
+
+.great-cta-block {
+  background-color: $great-blue;
+  background-color: rgba(30, 19, 72, 0.8);
+  color: $white;
+  padding: 30px 15px;
+
+  h1, h2, h3 {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.great-tiles-wrapper {
+  position: relative;
+  top: -50px;
+}
+
+.great-tile {
+
+  background-color: $white;
+  margin: 0 0 30px 0;
+  padding: 15px;
+  float: left;
+  width: 100%;
+  position: relative;
+
+  &--half {
+    margin-right: 4%;
+    width: 48%;
+  }
+
+  &--third {
+    margin-right: 4%;
+    width: 30.66666667%;
+  }
+
+  &--quarter {
+    margin-right: 4%;
+    width: 22%;
+  }
+
+  &-omega {
+    margin-right: 0 !important;
+  }
+
+  &--sub-tile {
+    background-color: $stone-40;
+    border: 1px solid $stone;
+    // margin-right: 1%;
+    width: 32.66666667%;
+    margin: 15px 1% 0 0;
+  }
+
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    width: 100% !important;
+    margin-right: 0;
+  }
+
+  .great-btn {
+    position: absolute;
+    bottom: 15px;
+  }
+
+}

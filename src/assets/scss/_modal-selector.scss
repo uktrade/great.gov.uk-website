@@ -1,7 +1,20 @@
 //modal-selector.scss
 
+.dit-selector-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  width: 80%;
+
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+
 .modal-lang-selector {
-  color: $text-colour;
+  color: $dark-grey;
 
   ul {
     list-style: none;
@@ -16,12 +29,12 @@
 
   a {
     font-weight: bold;
-    color: $text-colour;
+    color: $dark-grey;
     display: inline-block;
     position: relative;
 
     &:hover {
-      color: $link-colour;
+      color: $link-blue;
       border-bottom: 1px solid;
       margin-bottom: -3px !important;
     }
@@ -45,7 +58,7 @@
 }
 
 .modal-reg-selector {
-  color: $text-colour;
+  color: $dark-grey;
 
   ul {
     list-style: none;
@@ -60,13 +73,13 @@
 
   a {
     font-weight: bold;
-    color: $text-colour;
+    color: $dark-grey;
     display: inline-block;
     position: relative;
     //border-bottom: 1px solid transparent; //solves grid problem on hover
 
     &:hover {
-      color: $link-colour;
+      color: $link-blue;
       border-bottom: 1px solid;
       margin-bottom: -3px !important;
     }

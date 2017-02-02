@@ -4,10 +4,17 @@
 @import "utilities/margins";
 @import "utilities/padding";
 @import "utilities/text-transform";
-@import "utilities/base-type";
 @import "utilities/colours";
+@import "utilities/base-type";
+@import "utilities/util";
 
 
-//shame - to be refactored and broken into the appropriate chunks
-@import "shame";
+@import "hero";
+@import "breadcrumb";
+@import "button";
+@import "flags";
+@import "footer";
+@import "icons";
+@import "section";
+@import "top-bar";
 @import "modal-selector";
