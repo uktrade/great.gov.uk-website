@@ -2,4 +2,42 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+
+  background-color: $stone-40;
+  background-image: url(../img/great-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-size: 16px;
+  color: $dark-grey;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 14px;
+  }
+}
+
+a {
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 18px;
+  }
+}
+
+.container {
+  @media (max-width: $screen-xs-max) {
+    margin: 0 15px;
+  }
+}
+
+.list-unstyled {
+  font-size: 14px;
 }

@@ -1,0 +1,47 @@
+.great-footer {
+  background-color: $great-blue;
+  padding: 50px 0;
+  color: $white;
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &--list {
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      height: 25px;
+      padding: 0px 12px 0 8px;
+      border-right: 1px solid $white;
+      &:last-of-type {
+        border-right: 0 solid $white;
+      }
+    }
+  }
+
+  &--logo {
+    display: block;
+    height: 27px;
+    width: auto;
+    //margin-top: 35px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    height: 100%;
+  }
+}
+
+.image-link {
+  display: inline-block;
+  &:hover, &:focus, &:active {
+    // text-decoration: none;
+    border-bottom: 0px solid transparent !important;
+    padding-bottom: 0px !important;
+  }
+}

@@ -1,0 +1,29 @@
+.dit-icon {
+  height: 70px;
+  width: 70px;
+  margin: 28px auto;
+
+  &-sm {
+    height: 50px;
+    width: 50px;
+    margin: 4px -4px 0 15px;
+  }
+
+  &-xs {
+    height: 24px;
+    width: 24px;
+  }
+
+  &-language {
+    background: linear-gradient(transparent, transparent),
+    url(../img/language-icon.svg) no-repeat;
+    background-size: contain;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+                    src=$assets + '/img/dit-language-icon.png',
+                    sizingMethod='scale');
+
+    @media (max-width: $screen-xs-max) {
+      margin: -13px -15px 0 0;
+    }
+  }
+}

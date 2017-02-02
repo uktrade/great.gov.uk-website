@@ -1,16 +1,49 @@
-    <div class="great-hero">
-        <div class="container">
+<div class="great-hero">
+    <div class="container">
 
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1>{{pageTitle}}</h1>
-                </div>
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    {{pageHeader.content.contents | safe}}
-                </div>
+        <!--
+[cms-fields]
+pageTitle:
+ type: text
+ label: Page Title
+ placeHolder: Enter page title
+ help: This title will show up on browser
+ value: default value
+ required: true
+pageHeader:
+ type: content
+ label: Page intro
+ help: Select a markdown file for intro
+pageFooter:
+ type: content
+ label: Page intro
+ help: Select a markdown file for intro
+   fields:
+     content:
+       type: text
+       label: Content
+       help: Choose content to appear in this section
+     link_label:
+       type: text
+       label: label for target link for bullet item
+       help: Enter a label for this bullet list item target
+     link_target:
+       type: text
+       label: Target link for bullet item
+       help: Enter a link for this bullet list item target
+[/cms-fields]
+   -->
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>{{pageHeader.content.title}}</h1>
             </div>
-            <!-- /.row -->
-
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                {{pageHeader.content.contents | safe}}
+            </div>
         </div>
-        <!-- /.container -->
+        <!-- /.row -->
+
     </div>
+    <!-- /.container -->
+</div>

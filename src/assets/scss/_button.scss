@@ -1,0 +1,24 @@
+a.great-btn, .great-btn {
+  padding: 15px 20px;
+  display: inline-block;
+  border: 3px solid $link-blue;
+  color: $link-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $link-blue;
+    color: $white;
+  }
+
+  &--white {
+    border: 3px solid $white;
+    color: $white;
+
+    &:hover {
+      text-decoration: none;
+      background-color: $white;
+      color: $link-blue;
+    }
+  }
+}
