@@ -1,10 +1,10 @@
+var equalheight=require('./equalHeight');
+var $=jQuery= require('jquery');
 init();
-
-
+module.exports={};
 
 function init() {
     var is_root = location.pathname == "/";
-    // console.log(location.pathname);
 
     doEqualHeights('.great-equal-hights-container');
     setupLocaleSelector();
@@ -77,13 +77,11 @@ function resizeListner() {
 
 function checkGeoLocation() {
     var jqxhr = $.getJSON("//freegeoip.net/json/", function(data) {
-            // console.log( "success" );
         })
         .done(function(data) {
             doGeoRouting(data.country_code);
         })
         .fail(function() {
-            // console.log( "error" );
             removeloading();
         })
 }

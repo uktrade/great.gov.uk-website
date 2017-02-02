@@ -42,7 +42,7 @@
     </section>
 {% endmacro %}
 
-{% macro tilesWithSideDescription(header, list, country) %}
+{% macro tilesWithSideDescription(header, list, country, assets) %}
     <!--
     [cms-fields]
       list:
@@ -56,7 +56,7 @@
             help: Choose content to appear in this section
           link_label:
             type: text
-            label: Label for link 
+            label: Label for link
             help: Choose label for link
           link:
             type: text
@@ -73,7 +73,7 @@
                 <a class="dit-ind-side-desc-list__item" href="/{{ country }}{{ tile.link }}">
                     <div class="row">
                         <div class="col-md-4 dit-ind-side-desc-list__link-wrap">
-                            <img src="/assets/img/{{ tile.thumbnail }}" class="dit-ind-side-desc-list__image">
+                          <img src="/{{assets}}/img/{{ tile.thumbnail }}" class="dit-ind-side-desc-list__image">
                         </div>
                         <div class="col-md-8">
                             <div class="dit-ind-side-desc-list__title">{{ tile.content.title }}</div>
@@ -87,7 +87,7 @@
 {% endmacro %}
 
 
-{% macro tilesWithBottomDescription(header, list, country) %}
+{% macro tilesWithBottomDescription(header, list, country, assets) %}
 
     <!--
     [cms-fields]
@@ -102,7 +102,7 @@
             help: Choose content to appear in this section
           link_label:
             type: text
-            label: Label for link 
+            label: Label for link
             help: Choose label for link
           link:
             type: text
@@ -118,7 +118,7 @@
                 <a class="dit-ind-bottom-desc-list__item" href="/{{ country }}{{ tile.link }}">
                     <div class="row">
                         <div class="col-md-12 dit-ind-bottom-desc-list__link-wrap">
-                            <img src="/assets/img/{{ tile.thumbnail }}" class="dit-ind-bottom-desc-list__image">
+                          <img src="/{{assets}}/img/{{ tile.thumbnail }}" class="dit-ind-bottom-desc-list__image">
                             <div class="dit-ind-bottom-desc-list__title">
                             {{ tile.content.title }}
                             </div>
@@ -131,7 +131,7 @@
     </ul>
 {% endmacro %}
 
-{% macro tilesIndustry(header, list, country) %}
+{% macro tilesIndustry(header, list, country, assets) %}
     <!--
     [cms-fields]
       tileItems:
@@ -161,7 +161,7 @@
             <li class="dit-industries-list__item">
                 <div class="dit-industries-list__link-wrap">
                     <a href="/{{ country }}{{ tile.link }}">
-                        <img src="/assets/img/{{ tile.thumbnail }}" class="dit-industries-list__image">
+                        <img src="/{{assets}}/img/{{ tile.thumbnail }}" class="dit-industries-list__image">
                         <span class="dit-industries-list__text">{{ tile.content.title }}</span>
                     </a>
                 </div>
@@ -170,7 +170,7 @@
     </ul>
 {% endmacro %}
 
-{% macro tilesSector(header, list, country) %}
+{% macro tilesSector(header, list, country,assets) %}
     {% if header %}
         <h4 class="dit-content-section__heading">{{ header }}</h4>
     {% endif %}
@@ -179,7 +179,7 @@
             <li class="dit-sectors-list__item">
                 <div class="dit-sectors-list__link-wrap">
                     <a href="/{{ country }}{{ tile.link }}">
-                        <img src="/assets/img/{{ tile.thumbnail }}" class="dit-sectors-list__image">
+                        <img src="/{{assets}}/img/{{ tile.thumbnail }}" class="dit-sectors-list__image">
                         <span class="dit-sectors-list__text">{{ tile.content.title }}</span>
                     </a>
                 </div>

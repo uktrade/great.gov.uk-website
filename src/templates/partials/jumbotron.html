@@ -1,14 +1,14 @@
 {% if pageHeader.heroImage %}
     <style>
         .jumbotron {
-            background-image: url("/assets/img/{{pageHeader.heroImage}}");
+          background-image: url("/{{assets}}/img/{{pageHeader.heroImage}}");
             background-size: cover;
         }
     </style>
 {% endif %}
 <div class="dit-hmg_logo">
     <div class="container">
-        <img class="dit-logo" src="/assets/img/hmg-logo.png" alt="HMG Logo">
+      <img class="dit-logo" src="/{{assets}}/img/hmg-logo.png" alt="HMG Logo">
         <div class="dit-nav-contact">{{labels.contact}}</div>
     </div>
 </div>
@@ -70,8 +70,8 @@
             </div>
         </div>
 
-        <video autoplay loop poster="/assets/img/northern-powerhouse.jpg" class="dit-hero__video-bg">
-            <source src="/assets/vid/northern-powerhouse.mp4" type="video/mp4">
+        <video autoplay loop poster="/{{assets}}/img/northern-powerhouse.jpg" class="dit-hero__video-bg">
+          <source src="/{{assets}}/vid/northern-powerhouse.mp4" type="video/mp4">
         </video>
     {% endif %}
 </div>

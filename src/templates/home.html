@@ -9,12 +9,12 @@
 
 {{firstSection.content.contents|safe}}
 
-{{ markups.bullet_list( header = listHeader, list = listItems, country = locale.country  ) }}
+{{ markups.bullet_list( header = listHeader, list = listItems, country = locale.country, assets=assets  ) }}
 
 <section class="dit-content-section container">
     <div class="row">
       <div class="col-md-12">
-        {{ markups.tilesWithSideDescription( header = labels.great_british_industries, list = tileItems, country = locale.country  ) }}
+        {{ markups.tilesWithSideDescription( header = labels.great_british_industries, list = tileItems, country = locale.country, assets=assets  ) }}
         <div class="dit-section-cta">
           <a href="industries" class="btn">{{labels.discover}}</a>
         </div>
