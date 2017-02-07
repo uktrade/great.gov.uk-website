@@ -2,7 +2,7 @@
   background-color: $great-blue;
   background-color: rgba(30, 19, 72, 0.8);
   color: $white;
-  padding: 40px 0 80px 0;
+  padding: flip-side-values(40px 0 80px 0);
 
   h1 {
     font-size: 55px;
@@ -22,7 +22,7 @@
     // border-bottom: 1px solid $white;
     font-weight: 300;
     line-height: 1.4;
-    padding: 20px 0 0 0;
+    padding: flip-side-values(20px 0 0 0);
 
     @media (max-width: $screen-sm-max) {
       font-size: 18px;
