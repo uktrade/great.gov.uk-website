@@ -1,0 +1,22 @@
+// directions.scss
+
+@function flip-side-values($values) {
+  @if $direction == right and length($values) >= 4 {
+    // Reorder right and left positions in list
+    @return nth($values, 1) nth($values, 4) nth($values, 3) nth($values, 2);
+  }
+  @else {
+    @return $values;
+  }
+}
+
+@function flip-side($l, $r: null) {
+  @if $direction == left {
+    @return $l;
+  } @else {
+    @return $r;
+  }
+}
+
+$left: flip-side(left, right);
+$right: flip-side(right, left);

@@ -12,15 +12,15 @@
   }
 
   &--list {
-    padding-left: 0;
+    padding-#{$left}: 0;
 
     li {
       display: inline-block;
       height: 25px;
-      padding: 0px 12px 0 8px;
-      border-right: 1px solid $white;
+      padding: flip-side-values(0px 12px 0 8px);
+      border-#{$right}: 1px solid $white;
       &:last-of-type {
-        border-right: 0 solid $white;
+        border-#{$right}: 0 solid $white;
       }
     }
   }

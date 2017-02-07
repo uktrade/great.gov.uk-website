@@ -35,35 +35,35 @@
 .great-tile {
 
   background-color: $white;
-  margin: 0 0 30px 0;
+  margin: flip-side-values(0 0 30px 0);
   padding: 15px;
-  float: left;
+  float: #{$left};
   width: 100%;
   position: relative;
 
   &--half {
-    margin-right: 4%;
+    margin-#{$right}: 4%;
     width: 48%;
   }
 
   &--third {
-    margin-right: 4%;
+    margin-#{$right}: 4%;
     width: 30.66666667%;
   }
 
   &--quarter {
-    margin-right: 4%;
+    margin-#{$right}: 4%;
     width: 22%;
   }
 
   &-omega {
-    margin-right: 0 !important;
+    margin-#{$right}: 0 !important;
   }
 
   &--sub-tile {
     background-color: $stone-40;
     border: 1px solid $stone;
-    // margin-right: 1%;
+    // margin-#{$right}: 1%;
     width: 32.66666667%;
     margin: 15px 1% 0 0;
   }
@@ -74,7 +74,7 @@
 
   @media (max-width: $screen-xs-max) {
     width: 100% !important;
-    margin-right: 0;
+    margin-#{$right}: 0;
   }
 
   .great-btn {

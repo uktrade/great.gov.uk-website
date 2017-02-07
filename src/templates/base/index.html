@@ -17,9 +17,19 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    {% if locale.language === 'ar' %}
+    <link href='http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css' rel='stylesheet' type='text/css'>
+    {% else %}
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    {% endif %}
     <link href="/{{assets}}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    {% if direction === 'rtl' %}
+    <!--if for rtl language-->
+    <link rel="stylesheet" href="/{{assets}}/css/bootstrap-rtl.min.css">
+    <link href="/{{assets}}/css/main-rtl.css" rel="stylesheet" type="text/css"/>
+    {% else %}
     <link href="/{{assets}}/css/main.css" rel="stylesheet" type="text/css"/>
+    {% endif %}
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
       w[l] = w[l] || [];
