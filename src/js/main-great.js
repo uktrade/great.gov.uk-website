@@ -1,7 +1,7 @@
-var equalheight=require('./equalHeight');
-var $=jQuery= require('jquery');
+var equalheight = require('./equalHeight');
+var $ = jQuery = require('jquery');
 init();
-module.exports={};
+module.exports = {};
 
 function init() {
     var is_root = location.pathname == "/";
@@ -74,32 +74,36 @@ function resizeListner() {
     });
 }
 
-
 function checkGeoLocation() {
-    var jqxhr = $.getJSON("//freegeoip.net/json/", function(data) {
-        })
+    var supportedGBCountries = ['GB', 'IE'];
+    $.getJSON('//freegeoip.net/json/', function() {})
         .done(function(data) {
-            doGeoRouting(data.country_code);
+            if ($.inArray(data.country_code, supportedGBCountries) != '-1') {
+                getRedirectPath(data.country_code)
+            } else {
+                doRedirect("/uk/")
+            }
         })
         .fail(function() {
-            removeloading();
+            loaded()
         })
 }
 
-function doGeoRouting(countryCode) {
-    var supportedCountries = ['US', 'CN', 'DE', 'IN'];
-    var supportedGBCountries = ['GB', 'IE'];
-
-    if ($.inArray(countryCode, supportedCountries) != '-1') {
-        doRedirect(countryCode);
-    } else if ($.inArray(countryCode, supportedGBCountries) != '-1') {
-        doRedirect('UK');
-    } else {
-        doRedirect('INT');
-    }
+function getRedirectPath(countryCode) {
+    //TODO move lookup table to more stable location
+    $.getJSON('https://cdn.rawgit.com/uktrade/iigb-beta-structure/develop/redirects/ip_redirects.json', function(data) {})
+        .done(function(data) {
+            doRedirect(data[countryCode])
+        })
+        .fail(function() {
+            loaded()
+        })
 }
 
-function doRedirect(countryCode) {
-    var redirectLocation = countryCode.toLowerCase();
-    window.location.pathname = '/' + redirectLocation;
+function doRedirect(redirectLocation) {
+    if (redirectLocation == undefined || redirectLocation == '') {
+        window.location.pathname = '/int/'
+    } else {
+        window.location.pathname = redirectLocation
+    }
 }
