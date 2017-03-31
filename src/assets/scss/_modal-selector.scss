@@ -20,7 +20,7 @@
     list-style: none;
     margin: 0;
     overflow: hidden;
-    padding: 0 0 28px 0;
+    padding: flip-side-values(0 0 28px 0);
   }
 
   li {
@@ -43,7 +43,7 @@
 
   @media (max-width: $screen-xs-max) {
     ul {
-      padding: 0 0 16px 0;
+      padding: flip-side-values(0 0 16px 0);
     }
 
     li {
@@ -94,6 +94,10 @@
 
   }
 
+   li a {
+     padding-right: 7px;
+    }
+
   @media (max-width: $screen-xs-max) {
     ul {
       padding: 0 0 16px;
@@ -104,8 +108,8 @@
     }
 
     li a {
-      margin-left: 50px;
-      padding: 0;
+      margin-#{$left}: 50px;
+      padding: 0px 7px 0px 0px;
       font-size: 14px;
     }
   }
