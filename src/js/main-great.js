@@ -96,11 +96,11 @@ function doGeoRouting(countryCode) {
       })
 }
 
-function doRedirect(countryCode) {
+function doRedirect(redirectLocation) {
     if (redirectLocation == undefined || redirectLocation == '') {
-      debug('Location code is empty, redirecting to /int')
-      window.location.pathname = '/int/'
+      debug('Location code is empty, redirecting to /int');
+      window.location.pathname = '/int/';
     } else {
-      window.location.pathname = redirectLocation
+      window.location.pathname = redirectLocation;
     }
 }
