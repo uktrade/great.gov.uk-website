@@ -74,32 +74,33 @@ function resizeListner() {
     });
 }
 
-
 function checkGeoLocation() {
-    var jqxhr = $.getJSON("//freegeoip.net/json/", function(data) {
-        })
-        .done(function(data) {
-            doGeoRouting(data.country_code);
-        })
-        .fail(function() {
-            removeloading();
-        })
-}
+    return $.ajax({
+      url: '//freegeoip.net/json/',
+      type: 'GET',
+      dataType: 'jsonp',
+    }).then(function(data) {
+      debug('Resolved country code as ', data.country_code)
+      return doGeoRouting(data.country_code);
+    })
+  }
 
 function doGeoRouting(countryCode) {
-    var supportedCountries = ['US', 'CN', 'DE', 'IN'];
-    var supportedGBCountries = ['GB', 'IE'];
-
-    if ($.inArray(countryCode, supportedCountries) != '-1') {
-        doRedirect(countryCode);
-    } else if ($.inArray(countryCode, supportedGBCountries) != '-1') {
-        doRedirect('UK');
-    } else {
-        doRedirect('INT');
-    }
+    var build=document.iigbBuild ? document.iigbBuild + '/':'';
+    var ipRedirectUrl='/assets/' + build+ 'ip_redirects.json';
+    return $.getJSON( ipRedirectUrl)
+      .done(function(data) {
+        debug('Redirecting to', data[countryCode])
+        doRedirect(data[countryCode])
+        return true
+      })
 }
 
-function doRedirect(countryCode) {
-    var redirectLocation = countryCode.toLowerCase();
-    window.location.pathname = '/' + redirectLocation;
+function doRedirect(redirectLocation) {
+    if (redirectLocation == undefined || redirectLocation == '') {
+      debug('Location code is empty, redirecting to /int');
+      window.location.pathname = '/int/';
+    } else {
+      window.location.pathname = redirectLocation;
+    }
 }
